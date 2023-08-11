@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class ProductComponent {
 
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    const productName = this.route.snapshot.params['productName'];
+  }
 }

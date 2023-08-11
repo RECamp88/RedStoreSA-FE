@@ -1,18 +1,28 @@
-<div class="header">    
-    <div class="container">
+
         <div class="navbar">
-            <div class="logo">
-                <a href="index.html"><img src="assets/images/logo.png" width="150px"></a>                    
-            </div>
+           
             <nav>
-                <ul id="MenuItems">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="">Account</a></li>
-                  
-                </ul>
+                <div class="row">
+                    <div class="col-2">
+                        <div class="logo">
+                            <a routerLink="**" routerLinkActive="active-link" ariaCurrentWhenActive="page"><img src="assets/images/logo.png" width="150px"></a>                    
+                        </div>
+                    </div>
+                   <div class="col-2">
+                    <ul id="MenuItems">
+                        <li><a routerLink="**" routerLinkActive="active-link" ariaCurrentWhenActive="page">Home</a></li>
+                        <li><a routerLink="/products" routerLinkActive="active-link" ariaCurrentWhenActive="page">Products</a></li>
+                        <li><a routerLink="/account" routerLinkActive="active-link" ariaCurrentWhenActive="page">Account</a></li>
+                        <li><a routerLink="/login" routerLinkActive="active-link" ariaCurrentWhenActive="page">Login/SignUp</a></li>
+                        <li><a routerLink="/cart" routerLinkActive="active-link" ariaCurrentWhenActive="page"><img src="assets/images/cart.png" width="30px" height="30px"></a> </li>
+                    </ul>
+                      
+                   </div>
+                </div>
+               
+               
             </nav>
-            <a href="cart.html"><img src="assets/images/cart.png" width="30px" height="30px"></a>                
+                        
            
         </div>
-     
+

@@ -10,9 +10,8 @@ body{
 .footer{
     background: #000;
     color: #8a8a8a;
-    font-size: 14px;
+    font-size: 12px;
     padding: 25px 0px 20px;
-    bottom: 0;    
 }
 
 .footer p{
@@ -30,12 +29,12 @@ body{
 }
 
 .footer-col-1{
-    flex-basis: 30%;
+    flex-basis: 25%;
     margin-left: 10px;
 }
 
 .footer-col-2{
-    flex-basis: 46%;
+    flex: 1;
     text-align: center;
 }
 
@@ -71,4 +70,16 @@ ul{
 
 .copyright{
     text-align: center;
+}
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
