@@ -14,6 +14,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { ProductComponent } from './components/product/product.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FeaturedProductsComponent } from './components/featured-products/featured-products.component';
+import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { ExclusiveOfferComponent } from './components/exclusive-offer/exclusive-offer.component';
 
 //Angular Material Modules
 
@@ -30,7 +33,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     RegisterComponent,
     ProductComponent,
-    FooterComponent
+    FooterComponent,
+    FeaturedProductsComponent,
+    TestimonialsComponent,
+    ExclusiveOfferComponent
   ],
   imports: [
     BrowserModule,
