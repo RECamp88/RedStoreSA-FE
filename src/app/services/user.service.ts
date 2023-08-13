@@ -23,6 +23,14 @@ export class UserService {
     cart: []
   };
 
+  userInfo: any;
+  loginEmail: any;
+  loginPassword: any;
+
+  updateBalance(newBalance : number){
+    this.userInfo.balance = newBalance;
+  }
+
   // this sets a default variable for the endpoints
   // this was done to make it easy to update when changing where it is deployed
   ev = "http://localhost:9000";
@@ -73,6 +81,21 @@ export class UserService {
     header.append("accept", "text/json");
     header.append("Access-Control-Allow-Origin", "*");
     return this.httpClient.get(`${this.ev}/user/${id}`, {headers : header});
+  }
+
+  resetUserInfo() {
+    this.userInfo = {
+      id: 0,
+      firstname: "",
+      lastname: "",
+      email: "",
+      password: "",
+      shipping_address: "",
+      billing_address: "",
+      phone: "",
+      balance:0,
+      cart: [] 
+    }
   }
 }
 

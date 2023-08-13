@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input } from '@angular/core';
+import { Product } from 'src/app/models/product';
+import { ProductService } from 'src/app/services/product.service';
+import { ShoppingService } from 'src/app/services/shopping.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-product',
@@ -8,10 +11,30 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductComponent {
 
-  constructor(private route: ActivatedRoute) {}
+  @Input()
+  product : Product = {
+    id: 0,
+    name: "",
+    dept: "",
+    description: "",
+    price: 0,
+    quantity: 0,
+    img: ""
+  }
 
-  // what I want is for the name of the single product to be displayed in the path
-  ngOnInit() {
-    const productName = this.route.snapshot.params['productName'];
+  selectedProduct : any;
+  uid : number = this.userService.userInfo.id;
+  balance: any = this.userService.userInfo.balance;
+
+  constructor (private productService : ProductService, private userService : UserService, private shoppingService : ShoppingService){}
+
+  addToCart(uid: number, pid: number) {
+    this.shoppingService.addToCart(uid, pid).subscribe(json => {
+      this.selectedProduct=json;
+      console.log(this.selectedProduct);
+      this.balance= this.balance + this.selectedProduct.price;
+      console.log(this.balance);
+      this.userService.updateBalance(this.balance);
+    });
   }
 }
