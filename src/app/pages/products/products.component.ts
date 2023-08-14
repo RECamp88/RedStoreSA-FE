@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProductComponent } from 'src/app/components/product/product.component';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -9,9 +11,10 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductsComponent implements OnInit {
   
+ 
   products: any;
 
-  product: Product = {
+  selectedProduct: Product = {
     id: 0,
     name: '',
     dept: '',
@@ -21,7 +24,7 @@ export class ProductsComponent implements OnInit {
     img: ''
   };
   
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private router : Router) {}
 
   ngOnInit(): void {
     this.refresh();
@@ -32,8 +35,13 @@ export class ProductsComponent implements OnInit {
   }
 
   setProduct(id:number): void {
-    this.product=this.products[id];
-    console.log(this.product);
+    //passing in the indexOfProduct from template
+    this.selectedProduct=this.products[id];
+    console.log(this.selectedProduct);
+  }
+  
+  goToSingleItem() {
+    this.router.navigate(['/product']);
   }
 
 }

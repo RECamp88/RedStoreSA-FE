@@ -1,6 +1,12 @@
 <div class="small-container">
     <div class="row row-2">
         <h2>All Products</h2>
+
+        <!-- 
+            Currently, not a working feature. 
+            Need to set up the abilities to sort by these different options. As onInit() queries for all the items from the database
+            then some sort of filtering or pipeline should be use for these options
+         -->
         <select name="" id="">
             <option value="">Default Sorting</option>
             <option value="">Sort by price</option>
@@ -9,169 +15,14 @@
             <option value="">Sort by sale</option>
         </select>
     </div>
-   <!--  <div class="row">
-        <div class="col-4">
-            <img src="assets/images/product-1.jpg" alt="">
-            <h4>Red Printed T-Shirt</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-            </div>
-            <p>$25.00</p>
-        </div>
-        <div class="col-4">
-            <img src="assets/images/product-2.jpg" alt="">
-            <h4>Black Cross Trainer Sneakers</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-            </div>
-            <p>$95.00</p>
-        </div>
-        <div class="col-4">
-            <img src="assets/images/product-3.jpg" alt="">
-            <h4>Gray Athletic Pants</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <i class="fa fa-star-o"></i>
-            </div>
-            <p>$50.00</p>
-        </div>
-        <div class="col-4">
-            <img src="assets/images/product-4.jpg" alt="">
-            <h4>Blue Polo Shirt</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-            </div>
-            <p>$30.00</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-4">
-            <img src="assets/images/product-5.jpg" alt="">
-            <h4>Gray High-Top Sneakers</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-            </div>
-            <p>$125.00</p>
-        </div>
-        <div class="col-4">
-            <img src="assets/images/product-6.jpg" alt="">
-            <h4>Black Printed T-Shirt</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-            </div>
-            <p>$25.00</p>
-        </div>
-        <div class="col-4">
-            <img src="assets/images/product-7.jpg" alt="">
-            <h4>Assorted Athletic Socks</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-                <i class="fa fa-star-o"></i>
-            </div>
-            <p>$15.00</p>
-        </div>
-        <div class="col-4">
-            <img src="assets/images/product-8.jpg" alt="">
-            <h4>Sleek Black Watch</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </div>
-            <p>$150.00</p>
-        </div>
-        <div class="row">
-            <div class="col-4">
-                <img src="assets/images/product-9.jpg" alt="">
-                <h4>High Performance Athletic Watch</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <p>$175.00</p>
-            </div>
-            <div class="col-4">
-                <img src="assets/images/product-10.jpg" alt="">
-                <h4>Black/Red Cross Trainer Sneakers</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                </div>
-                <p>$95.00</p>
-            </div>
-            <div class="col-4">
-                <img src="assets/images/product-11.jpg" alt="">
-                <h4>Gray Slide On Sneakers</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$50.00</p>
-            </div>
-            <div class="col-4">
-                <img src="assets/images/product-12.jpg" alt="">
-                <h4>Black Athletic Pants</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$50.00</p>
-            </div>
-        </div>
-    </div> -->
-
+  
     <div class="row">
         <div class="col-4" *ngFor="let product of products; let indexOfProduct = index">
             <img src="assets/{{product.img}}" alt="">
             <h4>{{product.name}}</h4>
             <p>{{product.price | currency}}</p>
+            <button class="btn" (click)="setProduct(indexOfProduct); goToSingleItem()">View</button>
         </div>  
- </div>
-    <div class="page-btn">
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-        <span>4</span>
-        <span>&#8594;</span>
-    </div>   
+    </div>
+    
 </div>
