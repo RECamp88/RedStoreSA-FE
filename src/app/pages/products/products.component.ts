@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductComponent } from 'src/app/components/product/product.component';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
 

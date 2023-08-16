@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
 import { ShoppingService } from 'src/app/services/shopping.service';
@@ -11,17 +11,15 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ProductComponent {
 
-  @Input()
-  product : Product = {
+  chosenProduct: Product = {
     id: 0,
-    name: "",
-    dept: "",
-    description: "",
+    name: '',
+    dept: '',
+    description: '',
     price: 0,
     quantity: 0,
-    img: ""
+    img: ''
   }
-
   selectedProduct : any;
 
   uid : number = this.userService.userInfo.id;
@@ -29,12 +27,12 @@ export class ProductComponent {
 
   constructor (private productService : ProductService, private userService : UserService, private shoppingService : ShoppingService){}
 
- /*  ngOnInit(): void {
-    this.productService.getProductByID(this.product.id).subscribe(json => {
+  ngOnInit(): void {
+    this.productService.getProductByID(this.chosenProduct.id).subscribe(json => {
       this.selectedProduct = json;
       console.log(this.selectedProduct);
     });
-  } */
+  } 
   addToCart(uid: number, pid: number) {
     this.shoppingService.addToCart(uid, pid).subscribe(json => {
       this.selectedProduct=json;

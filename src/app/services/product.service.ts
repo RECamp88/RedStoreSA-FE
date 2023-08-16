@@ -9,8 +9,27 @@ export class ProductService {
 
   constructor(private httpClient : HttpClient) { }
 
+  product : Product = {
+    id: 0,
+    name: '',
+    dept: '',
+    description: '',
+    price: 0,
+    quantity: 0,
+    img: ''
+  };
   //creates an array of products when getting all products
   products : Product[] = [];
+
+  setProduct() {
+    
+  }
+
+  getProduct() {
+    return this.product;
+  }
+
+  
 
   // this sets a default variable for the endpoints
   // this was done to make it easy to update when changing where it is deployed
