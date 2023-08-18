@@ -14,6 +14,7 @@ export class ProductGalleryComponent implements OnInit{
 
   product?: Product;
 
+ 
   constructor(private productService : ProductService, private router : Router) {}
 
   ngOnInit(): void {
@@ -27,10 +28,11 @@ export class ProductGalleryComponent implements OnInit{
   setProduct(id:number): void {
     //passing in the indexOfProduct from template
     this.product=this.products[id];
+    this.productService.setProduct(this.product);    
     console.log(this.product);
   }
   
   goToSingleItem() {
-    this.router.navigate(['/product/{id}']);
+    this.router.navigateByUrl('/product');
   }
 }

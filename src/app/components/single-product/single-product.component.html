@@ -1,13 +1,13 @@
 <div class="small-container single-product" >
-    <h2>Products / {{product.name}}</h2>
+    <h2>Products / {{product?.name}}</h2>
     <div class="row">
         <div class="col-2">
-            <img src={{product.img}} width="100%" id="ProductImg">
+            <img src="assets/{{product?.img}}" width="100%" id="ProductImg">
         </div>
         <div class="col-2">
-            <p>Category / {{product.dept}}</p>>
-            <h1>{{product.name}}</h1>
-            <h4>{{product.price}}</h4>
+            <p>Category / {{product?.dept}}</p>
+            <h1>{{product?.name}}</h1>
+            <h4>{{product?.price | currency}}</h4>
             <select>
                 <option value="">Select Size</option>
                 <option value="">XXL</option>
@@ -15,10 +15,11 @@
                 <option value="">L</option>
                 <option value="">M</option>
             </select>
-            <a class="btn" (click)="addToCart(uid, product.id)">Add To Cart</a>
+            <!-- <a class="btn" (click)="addToCart(uid, product.id)">Add To Cart</a> -->
+            <a class="btn">Add To Cart</a>
             <h3>Product Details <i class="fa fa-indent"></i></h3>
             <br>
-            <p>{{product.description}}</p>
+            <p>{{product?.description}}</p>
         </div>
     </div>
 </div>

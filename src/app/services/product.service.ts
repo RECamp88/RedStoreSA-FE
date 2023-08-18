@@ -14,6 +14,14 @@ export class ProductService {
   snapshot: any;
 
   constructor(private httpClient : HttpClient) { }
+
+  setProduct(selectedProduct: Product):void {
+    this.product = selectedProduct;
+  }
+
+  getProduct() {
+    return this.product;
+  }
   
   // this sets a default variable for the endpoints
   // this was done to make it easy to update when changing where it is deployed
