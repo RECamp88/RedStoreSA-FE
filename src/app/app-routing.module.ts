@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SingleProductComponent } from './components/single-product/single-product.component';
 import { ProductGalleryComponent } from './pages/product-gallery/product-gallery.component';
 
+
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'navbar', component: NavbarComponent},

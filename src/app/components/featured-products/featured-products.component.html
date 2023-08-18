@@ -6,26 +6,12 @@
 <div class="small-container">
     <h2 class="title">Featured Products</h2>
     <div class="row">
-        <div class="col-4">
-            <a href=""><img src="assets/images/product-1.jpg" alt=""></a>
-            <h4>Red Printed T-Shirt</h4>
-            <p>$35.00</p>
+        <div class="col-4" *ngFor="let product of products; let indexOfProduct = index">
+            <img src="assets/{{product.img}}" alt="">
+            <h4>{{product.name}}</h4>
+            <p>{{product.price | currency}}     <button class="btn" (click)="setProduct(indexOfProduct); goToSingleItem()">View</button></p>
         </div>
-        <div class="col-4">
-            <img src="assets/images/product-2.jpg" alt="">
-            <h4>Black Cross Trainer Sneakers</h4>
-            <p>$95.00</p>
-        </div>
-        <div class="col-4">
-            <img src="assets/images/product-3.jpg" alt="">
-            <h4>Gray Athletic Pants</h4>
-            <p>$65.00</p>
-        </div>
-        <div class="col-4">
-            <img src="assets/images/product-4.jpg" alt="">
-            <h4>Blue Polo Shirt</h4>
-            <p>$50.00</p>
-        </div>
+   
     </div>
 </div>
 

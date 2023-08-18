@@ -25,8 +25,8 @@ export class SingleProductComponent implements OnInit{
     private route: ActivatedRoute,
     private location: Location) {}
   
-    ngOnInit(): void {
-      this.getSingleProduct();
+  ngOnInit(): void {
+    this.getSingleProduct();
     }
     
   getSingleProduct(): void {
