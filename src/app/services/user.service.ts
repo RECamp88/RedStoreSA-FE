@@ -1,34 +1,95 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { User } from '../models/user';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private httpClient : HttpClient) { }
-
-  // this defines a user based off of the model
   user: User = {
     id: 0,
-    firstname: "",
-    lastname: "",
-    email: "",
-    password: "",
-    shipping_address: "",
-    billing_address: "",
-    phone: "",
+    firstname: '',
+    lastname:'',
+    email: '',
+    password: '',
+    shipping_address: '',
+    billing_address: '',
+    phone: '',
     balance: 0,
     cart: []
   };
+
+  loggedIn : boolean = false;
 
   userInfo: any;
   loginEmail: any;
   loginPassword: any;
 
+  constructor(private httpClient : HttpClient, private router : Router) { }
+
+  getUser() : User {
+    if(this.user === undefined){
+      throw new Error("UserService.getUser: user is undefined");
+    }
+    return this.user;
+  }
+
+  setUser(user:User) {
+    if (user === undefined) {
+      throw new Error("UserService.setUser: user is undefined")
+    }
+    this.user=user;
+  } 
+
+  setAccount(user:User):void {
+    this.user=user;
+    this.loggedIn = true;
+  }
+
   updateBalance(newBalance : number){
     this.userInfo.balance = newBalance;
+  }
+  
+  setPassword(password : string){
+    this.user.password = password;
+  }
+  
+  setEmail(email : string){
+    this.user.email = email;
+  }
+
+  verifyCredentials(user: User) : boolean {
+    if (user.email == undefined) return false;
+    if (user.password == undefined) return false;
+   
+    return true;
+  }
+
+  logout(): void {
+    this.loggedIn = false;
+    this.resetUserInfo();
+  }
+
+  login(user:User): void {
+    console.log(user);
+
+    let loginResponse : Observable<User> = this.postLogin(user);
+
+    loginResponse.subscribe(json => {
+      if(json.email == null){
+        console.log(json);
+        throw new Error("login(): Invalid credentials");
+      }else {
+        this.setUser(user);
+        this.user = json;
+        this.loggedIn = true;
+      }
+    })
+    this.router.navigateByUrl('/account');
+    // need to add additional statements to set the user for the cart
   }
 
   // this sets a default variable for the endpoints
@@ -45,6 +106,9 @@ export class UserService {
 
   //this logs in an existing user
   postLogin(user : User) {
+    if (this.verifyCredentials(user) == false){
+      throw new Error("Invalid credentials");
+    }
     let header : HttpHeaders = new HttpHeaders();
     header.append("accept", "text/json");
     header.append("Access-Control-Allow-Origin", "*");
